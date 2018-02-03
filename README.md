@@ -7,7 +7,7 @@
 
 ### 用script标签引入
 
-下载[here](https://)并引入:
+下载[here](https://github.com/oxDesigner/iCookie/blob/master/icookie.js)并引入:
 
 ``` html
 <script src="*/icookie.js"></script>
@@ -21,6 +21,7 @@
 
 ## 基本用法
 
+
 ### 全局配置
 
 按照代码执行顺序，全局配置声明之后存入cookie才受全局配置影响
@@ -33,7 +34,10 @@ iCookie.config({
 });
 ```
 
+
+
 ### 存入(以下范例默认没有设置全局配置)
+
 
 
 #### 存入一个key，value对，path、domain，expires均为默认值；
@@ -82,6 +86,7 @@ iCookie.set({
 
 ### 顶替全局配置
 
+
 其中key，value对的有效期为7天，path为/test，key1，value1对的有效期为3天，path为/
 
 ``` javascript
@@ -99,7 +104,11 @@ iCookie.set('key1', 'value1',{
 });
 ```
 
+
+
 ### 读取(以下范例默认没有设置全局配置)
+
+
 
 **读取里面有几个未解决的坑，等会说** 
 
@@ -130,7 +139,8 @@ iCookie.get(['key1','key2']); // => { 'key1': 'value1', 'key2': 'value2' }
 #### 坑
 
 
-#####坑1
+##### 坑1
+
 ``` javascript
 iCookie.set('key1', '我是默认 /');
 iCookie.set('key1', '我是设置 /test', {
@@ -139,6 +149,7 @@ iCookie.set('key1', '我是设置 /test', {
 iCookie.get('key1'); // => '我是默认 /'
 iCookie.get(); // => {'key1': '我是默认 /'}
 ```
+
 **如果存入同名cookie，不同路径或不同域，则两者都会存在于cookie中，读取的时候只能读取到其中一个，至于为什么请看源码，我测试过的浏览器都是只能读取到离当前路径最远的路径，因为document.cookie返回的cookie字符串，当前路径的在最前面，后面的顶替了前面的**
 
 **解决方案： 不要存入同名cookie，我有什么办法？ 我也很绝望啊**
@@ -155,7 +166,8 @@ iCookie.get(); // => {'/': {'key1': '我是默认 /'}, '/test': {'key1': '我是
 <!--设想end-->
 ```
 
-#####坑2
+##### 坑2
+
 ``` javascript
 iCookie.set('key1', {'a': 1});
 iCookie.get('key1'); // => '{"a": 1}'
@@ -176,10 +188,14 @@ iCookie.get('key1'); // => {"a": 1}  直接返回对象
 ``` html
 <!--设想end-->
 ```
+
 **其实存入非字符串进去，最后拿到的都是字符串，笑哭**
 
 
+
 ### 删除(以下范例默认没有设置全局配置)
+
+
 
 **删除里面有也有几个未解决的坑，等会说** 
 
@@ -203,7 +219,10 @@ iCookie.remove('key2', { path: '/test' }); // 删除成功 !
 **remove在源码内部还是走set，其实删除cookie就是把他的过期时间设为昨天，set的时候path和domain是怎样的配置，remove的时候path和domain必须是相同配置才能删除成功**
 
 
+
 ## 作者
+
+
 
 oxDesigner， 一个将近三十岁却依旧帅气的男人；
 如果你发现了bug，请及时提交Issues，亦可联系280441190@qq.com
