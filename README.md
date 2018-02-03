@@ -84,7 +84,7 @@ iCookie.set({
 });
 ```
 
-### 顶替全局配置
+#### 顶替全局配置
 
 
 其中key，value对的有效期为7天，path为/test，key1，value1对的有效期为3天，path为/
@@ -138,9 +138,6 @@ iCookie.get(['key1','key2']); // => { 'key1': 'value1', 'key2': 'value2' }
 
 #### 坑
 
-
-##### 坑1
-
 ``` javascript
 iCookie.set('key1', '我是默认 /');
 iCookie.set('key1', '我是设置 /test', {
@@ -166,7 +163,7 @@ iCookie.get(); // => {'/': {'key1': '我是默认 /'}, '/test': {'key1': '我是
 <!--设想end-->
 ```
 
-##### 坑2
+。。。。。。。。。。。。。。。这是另一个坑。。。。。。。。。。。。。。。。。。。
 
 ``` javascript
 iCookie.set('key1', {'a': 1});
@@ -206,13 +203,13 @@ iCookie.remove('key');
 iCookie.get('key'); // => undefined， 删除成功了
 ```
 
-#####坑
+##### 坑
 
 ```javascript
 iCookie.set('key1', 'value1');
 iCookie.set('key2', 'value2', { path: '/test' });
 iCookie.remove('key1'); // 删除成功
-iCookie.remove('key2'); // 删除失败、但不会报错
+iCookie.remove('key2'); // 删除失败、报错
 iCookie.remove('key2', { path: '/test' }); // 删除成功 !
 ```
 
@@ -225,5 +222,5 @@ iCookie.remove('key2', { path: '/test' }); // 删除成功 !
 
 
 oxDesigner， 一个将近三十岁却依旧帅气的男人；
-如果你发现了bug，请及时提交Issues，亦可联系280441190@qq.com
+如果你发现了bug，请及时提交Issues，亦可联系280441190@qq.com；
 如果你用着舒服，请给我一颗star
