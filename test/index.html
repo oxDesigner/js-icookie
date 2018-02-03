@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="set">设置</button>
+    <code>
+
+	</code>
+    <button id="get">获取</button>
+    <button id="remove">删除</button>
+</body>
+<script src="../icookie.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<script>
+    iCookie.config({
+        expires: 5
+    })
+    set.onclick = function() {
+        iCookie.set();
+        iCookie.set({
+            test: 1596
+        });
+        iCookie.set('a', 2);
+        iCookie.set('a', 3, {
+            path: '/test'
+        });
+        iCookie.set('b', 'b');
+        iCookie.set('c', undefined);
+        iCookie.set('d', [1], {
+            path: '/test'
+        });
+        iCookie.set('e', {
+            a: 1
+        });
+        iCookie.set('f', null);
+        iCookie.set({
+            g: '1'
+        }, {
+            expires: '1y',
+            path: '/test'
+        });
+        iCookie.set('h', '999', 4);
+        iCookie.set('i', '999', {
+            expires: '2h'
+        });
+
+        iCookie.set('j', {
+            a: {
+                b: {
+                    c: 1
+                }
+            },
+            x: {
+                c: [1, 2, 3]
+            }
+        }, {
+            expires: 0
+        });
+        iCookie.set('k', '%7B%22a%22%3A1%7D')
+    }
+    get.onclick = function() {
+        var a = iCookie.get();
+        console.log(a);
+        var b = iCookie.get('a');
+        console.log(b);
+        var c = iCookie.get(['a', 'b', 'c']);
+        console.log(c);
+        var d = iCookie.get('k');
+        console.log(d);
+    }
+    remove.onclick = function() {
+        iCookie.remove('d');
+    }
+</script>
+
+</html>
