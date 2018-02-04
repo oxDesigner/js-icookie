@@ -1,10 +1,10 @@
 {
-    "name": "icookie-js",
+    "name": "js-icookie",
     "description": "plugin for browser cookie",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "author": "oxDesigner <280441190@qq.com>",
     "license": "MIT",
-    "entry": "icookie.js",
+    "entry": "js-icookie.js",
     "scripts": {
         "test": "gulp"
     },

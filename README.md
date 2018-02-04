@@ -1,6 +1,6 @@
-# iCookie 
+# js-icookie 
 
-一个用来在浏览器（IE9+）中操作cookie的JavaScript Api
+一个用来在浏览器（IE9+）中操作cookie的JavaScript Api；
 还未经严密测试，发现bug请及时联系280441190@qq.com
 
 ## 安装
@@ -15,7 +15,7 @@
 
 ### NPM
 ```
-  $ npm i icookie-js -S
+  $ npm i js-icookie -S
 ```
 
 
