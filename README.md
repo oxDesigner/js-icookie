@@ -209,11 +209,11 @@ iCookie.get('key'); // => undefined， 删除成功了
 iCookie.set('key1', 'value1');
 iCookie.set('key2', 'value2', { path: '/test' });
 iCookie.remove('key1'); // 删除成功
-iCookie.remove('key2'); // 删除失败、报错
+iCookie.remove('key2'); // 删除失败，并不是每次删除失败都报错，如果当前domain或当前path找到了这个cookie，但是domain或者path设置的不一致，删除不成功也不报错，只有当前domain或当前path找不到这个cookie才报错；
 iCookie.remove('key2', { path: '/test' }); // 删除成功 !
 ```
 
-**remove在源码内部还是走set，其实删除cookie就是把他的过期时间设为昨天，set的时候path和domain是怎样的配置，remove的时候path和domain必须是相同配置才能删除成功**
+**remove在源码内部还是走set，其实删除cookie就是把他的过期时间设为昨天，set的时候path和domain是怎样的配置，remove的时候path和domain必须是相同配置才能删除成功，如果当前domain或当前path找到了这个cookie，但是domain或者path设置的不一致，删除不成功也不报错，只有当前domain或当前path找不到这个cookie才报错；**
 
 
 
