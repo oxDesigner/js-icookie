@@ -4,9 +4,13 @@
     "version": "1.0.2",
     "author": "oxDesigner <280441190@qq.com>",
     "license": "MIT",
-    "entry": "js-icookie.js",
+    "main": "js-icookie.js",
     "scripts": {
         "test": "gulp"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/oxDesigner/js-icookie"
     },
     "devDependencies": {
         "babel-core": "^6.26.0",
