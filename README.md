@@ -7,7 +7,7 @@
 
 ### 用script标签引入
 
-下载[here](https://github.com/oxDesigner/icookie-js/blob/master/icookie.js)并引入:
+下载[here](https://github.com/oxDesigner/js-icookie/blob/master/icookie.js)并引入:
 
 ``` html
 <script src="*/icookie.js"></script>
