@@ -93,7 +93,7 @@
         return date.toUTCString();
     }
 
-    function removeFn(icookie, key, options) {
+    function removeFn(iCookie, key, options) {
         if (iCookie.get(key) != null) {
             if (options) {
                 options.expires = -1;
