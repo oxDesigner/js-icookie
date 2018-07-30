@@ -1,7 +1,7 @@
 {
     "name": "js-icookie",
     "description": "plugin for browser cookie",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "author": "oxDesigner <280441190@qq.com>",
     "license": "MIT",
     "main": "js-icookie.js",
